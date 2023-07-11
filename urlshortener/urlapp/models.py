@@ -14,6 +14,6 @@ class URL(models.Model):
     qr_code = models.CharField(max_length=500)
     is_password_protected = models.BooleanField()
     can_expire = models.BooleanField()
-    password = models.CharField(blank=True, max_length=100)
-    expiration_time = models.DateTimeField(blank=True)
+    password = models.CharField(blank=True, max_length=100, default=None)
+    expiration_time = models.DateTimeField(blank=True, default=None)
 

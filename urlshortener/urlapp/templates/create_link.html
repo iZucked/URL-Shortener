@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="col-md-8">
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <h2 class="mr-2">Add Item</h2>
+      </div>
+      <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+          {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">Add Item</button>
+        </div>
+      </form>
+    </div>
+  </article>
+</div>
+
+{% endblock content %}
